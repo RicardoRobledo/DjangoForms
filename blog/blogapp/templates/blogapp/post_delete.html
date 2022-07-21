@@ -1,0 +1,17 @@
+<!-- templates/post_delete.html -->
+{% extends 'blogapp/base.html' %}
+
+
+{% block content %}
+
+    <h1>Delete post</h1>
+
+    <form action="" method="post">{% csrf_token %}
+        
+        <!-- Note we are using post.title here to display the title of our blog post. We
+        could also just use object.title as it too is provided by DetailView -->
+        <p>Are you sure you want to delete "{{ post.title }}"?</p>
+        
+        <input type="submit" value="Confirm">
+    </form>
+{% endblock content %}
